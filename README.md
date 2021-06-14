@@ -1,9 +1,9 @@
 # POKEDEX
 
-Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+Nome dos integrantes:
+- Carlos Henrique Rodrigues
+-  Fabricia da Silva Sant Anna 
+-  Laura Campos Nunes
 
 Link do Surge: www.link.com.br
 
