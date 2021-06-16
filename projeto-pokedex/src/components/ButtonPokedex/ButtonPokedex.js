@@ -8,7 +8,7 @@ export default function ButtonPokedex() {
 
     return (
         <button  onClick={() => goToPoke(history)}>
-            Minha Pokedéx
+            Minha Pokédex
         </button>
     )
 } 
