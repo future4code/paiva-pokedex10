@@ -6,8 +6,11 @@ export default function ButtonHome() {
     const history = useHistory()
 
     return (
-        <button  onClick={() => goToHome(history)}>
+
+        <button onClick={() => goToHome(history)}>
             Lista de pokemons
         </button>
+
+
     )
-} 
+}

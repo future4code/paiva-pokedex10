@@ -1,6 +1,5 @@
 import React from 'react'
 import ButtonHome from '../../components/ButtonHome/ButtonHome';
-import PokeCard from '../../components/PokeCard/PokeCard'
 import { Header } from './styled';
 
 const PagePoke = () => {
@@ -8,10 +7,9 @@ const PagePoke = () => {
     <div>
       <Header>
         <ButtonHome/>
-        <h1>PagePoke </h1>
+        <h1>Pokédex</h1>
       </Header>
-      <PokeCard/>
-    </div>
+      </div>
   );
 }
 
