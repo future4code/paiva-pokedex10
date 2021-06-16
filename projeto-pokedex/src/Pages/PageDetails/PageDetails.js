@@ -10,20 +10,22 @@ const PageDetails = () => {
   const history = useHistory()
 
   const params = useParams()
-  console.log("params:", params)
   const [pokemon, setPokemon] = useState({})
   
   useEffect(() => {
     const getPokemon = () => {
       
       axios.get(`${pokeURL}/${params.name}`)
-        .then((res) => setPokemon(res.data))
-        .catch((err) => console.log(err.data));
+        .then((res) => {
+          setPokemon(res.data)
+        })
+        .catch((err) => {
+          alert(err.data)
+        });
     };
     getPokemon();
   }, [setPokemon, pokeURL]);
 
-  console.log("objeto do pokemon:", pokemon)
  
   return (
     <div>
