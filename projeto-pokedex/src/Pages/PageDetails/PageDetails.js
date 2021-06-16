@@ -9,16 +9,18 @@ const PageDetails = () => {
   const history = useHistory()
 
   const [pokemon, setPokemon] = useState({})
+  
   useEffect(() => {
     const getPokemon = () => {
-      axios.get(`${pokeURL}/pikachu`)
+      
+      axios.get(`${pokeURL}/bulbasaur`)
         .then((res) => setPokemon(res.data))
         .catch((err) => console.log(err));
     };
     getPokemon();
   }, [setPokemon, pokeURL]);
 
-  console.log(pokemon)
+  console.log("objeto do pokemon:", pokemon)
  
   return (
     <div>
@@ -71,12 +73,14 @@ const PageDetails = () => {
 
         <Moves>
           Moves
-          {pokemon.moves ? (pokemon.moves.map((move) => {
+          {pokemon.moves ? (pokemon.moves.filter((item, index) => {
+            return index < 5
+          }).map((move) => {
             return (
               <p>
-                <strong>{move.move.name}</strong>
+                {move.move.name}
               </p>
-          )
+            )
           })) : (<p>Loading...</p>)}
         </Moves>
 
