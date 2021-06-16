@@ -3,19 +3,22 @@ import { goBack } from '../../Route/coordinator';
 import { useHistory } from 'react-router';
 import { Header, ContainerGrid, ImgFront, ImgBack, Stats, Type, Moves } from './styled';
 import axios from 'axios';
+import { useParams } from 'react-router';
 
 const PageDetails = () => {
   const pokeURL = "https://pokeapi.co/api/v2/pokemon"
   const history = useHistory()
 
+  const params = useParams()
+  console.log("params:", params)
   const [pokemon, setPokemon] = useState({})
   
   useEffect(() => {
     const getPokemon = () => {
       
-      axios.get(`${pokeURL}/bulbasaur`)
+      axios.get(`${pokeURL}/${params.name}`)
         .then((res) => setPokemon(res.data))
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err.data));
     };
     getPokemon();
   }, [setPokemon, pokeURL]);

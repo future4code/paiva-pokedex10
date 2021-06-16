@@ -34,7 +34,7 @@ import { ButtonContainer, Card } from './styled';
 
                 <ButtonContainer>
                     <button>Adicionar</button>
-                    <ButtonDetails>Detalhes</ButtonDetails>
+                    <ButtonDetails value={props.PokeInfo.name}>Detalhes</ButtonDetails>
                 </ButtonContainer>
             </Card>
         </div>
