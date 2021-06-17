@@ -24,7 +24,7 @@ const PageDetails = () => {
         });
     };
     getPokemon();
-  }, [setPokemon, pokeURL]);
+  }, [setPokemon, pokeURL, params.name]);
 
  
   return (
@@ -40,17 +40,17 @@ const PageDetails = () => {
         <ImgFront>
           Imagem frontal
           {pokemon.sprites && pokemon.sprites.front_default ? (
-        <img src={pokemon.sprites.front_default} alt={pokemon.name} />  ) : (
-          <p>Loading...</p>
-        )}
+            <img src={pokemon.sprites.front_default} alt={pokemon.name} />  ) : (
+            <p>Loading...</p>
+          )}
         </ImgFront>
 
         <ImgBack>
           Imagem de costas
           {pokemon.sprites && pokemon.sprites.back_default ? (
-        <img src={pokemon.sprites.back_default} alt={pokemon.name} />  ) : (
-          <p>Loading...</p>
-        )}
+            <img src={pokemon.sprites.back_default} alt={pokemon.name} />  ) : (
+            <p>Loading...</p>
+          )}
         </ImgBack>
 
         <Stats>
