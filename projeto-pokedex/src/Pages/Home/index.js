@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import ButtonPokedex from '../../components/ButtonPokedex/ButtonPokedex';
 import PokeCard from '../../components/PokeCard/PokeCard';
 import { ButtonContainer } from '../../components/PokeCard/styled';
-import { Header } from './styled';
-import { MainContainer } from '../Home/styled'
+import { Header, TextHome } from './styled';
+import { MainContainer, BodyHome, Logo } from '../Home/styled'
 import useRequestData from '../../Hooks/Cards';
+import imgLogo from "../../img/Logo_POKEDEX.png";
 
 
 const Home = () => {
@@ -27,17 +28,17 @@ const Home = () => {
             console.log(PokemonToAdd)
             const pokemonCopy = [...PokemonCard, PokemonToAdd]
             setPokemonCard(pokemonCopy)
-        }else {
+        } else {
             console.log('ENTRAR NO CARRINHO')
         }
 
 
-    // useEffect(() => {
-    //     axios.get('https://pokeapi.co/api/v2/pokemon/:idDoPokemon')
-    //         .then((res) => {
-    //             console.log(res.sprites)
-    //         })
-    // }, [])
+        // useEffect(() => {
+        //     axios.get('https://pokeapi.co/api/v2/pokemon/:idDoPokemon')
+        //         .then((res) => {
+        //             console.log(res.sprites)
+        //         })
+        // }, [])
 
 
     }
@@ -52,18 +53,24 @@ const Home = () => {
 
     return (
         <div>
+            <BodyHome>
+                <Header>
+                    <Logo>
+                    <img src={imgLogo} alt={"Pokedex"} />
+                    </Logo>
+                    <ButtonContainer>
+                        <ButtonPokedex />
+                    </ButtonContainer>
+                </Header>
 
-            <Header>
-                <ButtonContainer>
-                    <ButtonPokedex />
-                </ButtonContainer>
+                <TextHome>
+                    <h1>Lista de Pokédex</h1>
+                </TextHome>
+                <MainContainer>
+                    {ListPokedex}
+                </MainContainer>
+            </BodyHome>
 
-                <h1>Lista de Pokédex</h1>
-
-            </Header>
-            <MainContainer>
-                {ListPokedex}
-            </MainContainer>
 
         </div>
     );
