@@ -10,41 +10,30 @@ import imgLogo from "../../img/Logo_POKEDEX.png";
 
 const Home = () => {
     const poke = useRequestData([], 'https://pokeapi.co/api/v2/pokemon')
-
     const [PokemonCard, setPokemonCard] = useState([])
-
+    
     const addPokemon = (PokemonToAdd) => {
 
-
+        console.log("poke to add:", PokemonToAdd.name)
         const index = PokemonCard.findIndex((PokemonInAdd) => {
-            if (PokemonInAdd.id === PokemonToAdd.id) {
+            if (PokemonInAdd.name === PokemonToAdd.name) {
                 return true
             } else {
                 return false
             }
         })
-
-        if (index === 0) {
-            console.log(PokemonToAdd)
-            const pokemonCopy = [...PokemonCard, PokemonToAdd]
+        
+        console.log("index:", index)
+        if (index === -1) {
+            const pokeInPokedex = {... PokemonToAdd, taken: true}
+            const pokemonCopy = [...PokemonCard, pokeInPokedex]
             setPokemonCard(pokemonCopy)
         } else {
             console.log('ENTRAR NO CARRINHO')
         }
 
-
-        // useEffect(() => {
-        //     axios.get('https://pokeapi.co/api/v2/pokemon/:idDoPokemon')
-        //         .then((res) => {
-        //             console.log(res.sprites)
-        //         })
-        // }, [])
-
-
     }
-
-
-
+        
     const ListPokedex = poke.map((poke) => {
         return <PokeCard
             PokeInfo={poke}
