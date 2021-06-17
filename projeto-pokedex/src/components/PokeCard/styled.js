@@ -22,8 +22,5 @@ button {
     color: white;
     border:none;
     
-}
-
-
-       
+}       
 `
