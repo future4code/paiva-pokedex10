@@ -24,11 +24,13 @@ background-color: #B7D5E5;
 export const MainContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  
  `
 
 export const ButtonContainer = styled.div`  
   display: flex;
   justify-content: flex-start;
+  
   `
 
 export const TextHome = styled.h1`  
