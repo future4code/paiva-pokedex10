@@ -32,9 +32,17 @@ const Home = () => {
         }
 
 
+    // useEffect(() => {
+    //     axios.get('https://pokeapi.co/api/v2/pokemon/:idDoPokemon')
+    //         .then((res) => {
+    //             console.log(res.sprites)
+    //         })
+    // }, [])
+
+
     }
 
-    
+
 
     const ListPokedex = poke.map((poke) => {
         return <PokeCard

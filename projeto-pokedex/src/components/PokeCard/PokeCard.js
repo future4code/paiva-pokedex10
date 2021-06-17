@@ -34,8 +34,12 @@ const PokeCard = (props) => {
                 </div>
 
                 <ButtonContainer>
+
+                    
+                    <ButtonDetails value={props.PokeInfo.name}>Detalhes</ButtonDetails>
                     <button onClick={() => props.addPokemon(props.PokeInfo)}>Adicionar</button>
-                    <ButtonDetails>Detalhes</ButtonDetails>
+                   
+
                 </ButtonContainer>
             </Card>
         </div>

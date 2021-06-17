@@ -17,7 +17,7 @@ const Router = () => {
                     <PagePoke />
                 </Route>
 
-                <Route path="/details" exact>
+                <Route path="/details/:name" exact>
                     <PageDetails />
                 </Route>
 
