@@ -22,7 +22,7 @@ const Home = (props) => {
         })
         
         if (index === -1) {
-            const pokeInPokedex = {... PokemonToAdd, taken: true}
+            const pokeInPokedex = {...PokemonToAdd, taken: true}
             const pokemonCopy = [...PokemonCard, pokeInPokedex]
             setPokemonCard(pokemonCopy)
         } else {

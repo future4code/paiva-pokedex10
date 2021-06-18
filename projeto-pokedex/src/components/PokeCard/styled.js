@@ -10,6 +10,12 @@ export const Card = styled.div`
     justify-content: center;
     align-items: center;
     margin: 10px 28px;
+    text-align: center;
+
+    p{
+      font-size: 20px;
+      font-weight: bold;
+    }
 `
 
 export const ButtonContainer = styled.div`  
@@ -17,7 +23,7 @@ export const ButtonContainer = styled.div`
 margin: 10px 10px;   
 
 button {   
-    border-radius: 20px;
+    border-radius: 20px; 
     background-color: black ;
     color: white;
     border:none;
