@@ -2,7 +2,7 @@
 
 Nome dos integrantes:
 <br>
-Pessoa 1
+Pessoa 1 <br>
 Pessoa 2
 Pessoa 3
 Link do Surge: www.link.com.br
