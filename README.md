@@ -3,8 +3,8 @@
 Nome dos integrantes:
 <br>
 Pessoa 1 <br>
-Pessoa 2
-Pessoa 3
+Pessoa 2 <br>
+Pessoa 3 <br>
 Link do Surge: www.link.com.br
 
 O que funciona:
