@@ -3,12 +3,15 @@
 Nome dos integrantes:<br>
 <br>
 <h3>Carlos Henrique Rodrigues <h3> <br>
+  
 ![Carlos](https://user-images.githubusercontent.com/81387401/122611069-0f28db00-d057-11eb-9296-f6cd8e12434d.PNG)
 
 <h3>Fabricia da Silva Sant Anna <h3> <br>
+  
 ![Fabricia](https://user-images.githubusercontent.com/81387401/122611090-1819ac80-d057-11eb-89a4-926e1d9f223a.PNG)
 
 <h3>Laura Campos Nunes <h3> <br><br>
+  
 ![Laura](https://user-images.githubusercontent.com/81387401/122611100-1bad3380-d057-11eb-93b7-053d07faa366.PNG)
 
 
