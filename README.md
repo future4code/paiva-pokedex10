@@ -1,7 +1,7 @@
 # Pokédex
 
 <h3>Nome dos integrantes:</h3><br>
-<br>
+
 <h4>Carlos Henrique Rodrigues </h4>
   
 ![Carlos](https://user-images.githubusercontent.com/81387401/122611069-0f28db00-d057-11eb-9296-f6cd8e12434d.PNG)
@@ -25,7 +25,7 @@ Botão  detalhes do card direciona para a Page de detalhes do Pokémon <br>
 Botões do Header funciona <br>
 Botão adicionar do card localizado na Home <br>
 
-<h3>O que não funciona:</h3><br><br>
+<h3>O que não funciona:</h3><br>
 Page da lista de Pokemon não aparece a imagem, os botões do card, e adiciona vários pokemons dentro do mesmo card <br><br>
 
 
