@@ -17,3 +17,4 @@ O que não funciona:<br><br>
 Botão adicionar do card localizado na Home, adiciona o card mas o mesmo não sai da tela home <br>
 Page da lista de Pokemon não aparece a imagem, os botões do card, e adiciona vários pokemons dentro do mesmo card.
 
+
