@@ -1,7 +1,7 @@
 # Pokédex
 
 Nome dos integrantes:
-
+<br>
 Pessoa 1
 Pessoa 2
 Pessoa 3
