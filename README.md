@@ -1,31 +1,31 @@
 # Pokédex
 
-Nome dos integrantes:<br>
+<h3>Nome dos integrantes:</h3><br>
 <br>
-<h3>Carlos Henrique Rodrigues </h3>
+<h4>Carlos Henrique Rodrigues </h4>
   
 ![Carlos](https://user-images.githubusercontent.com/81387401/122611069-0f28db00-d057-11eb-9296-f6cd8e12434d.PNG)
 
-<h3>Fabricia da Silva Sant Anna </h3> 
+<h4>Fabricia da Silva Sant Anna </h4> 
   
 ![Fabricia](https://user-images.githubusercontent.com/81387401/122611090-1819ac80-d057-11eb-89a4-926e1d9f223a.PNG)
 
-<h3>Laura Campos Nunes </h3>
+<h4>Laura Campos Nunes </h4>
   
 ![Laura](https://user-images.githubusercontent.com/81387401/122611100-1bad3380-d057-11eb-93b7-053d07faa366.PNG)
 
 
-Link do Surge:uncovered-sock.surge.sh
+<h3>Link do Surge:</h3>uncovered-sock.surge.sh
 
 
-O que funciona : <br>
+<h3>O que funciona:</h3> <br>
 
 Página Home com os 20 Pokémons<br>
 Botão  detalhes do card direciona para a Page de detalhes do Pokémon <br>
 Botões do Header funciona <br>
 Botão adicionar do card localizado na Home <br>
 
-O que não funciona:<br><br>
+<h3>O que não funciona:</h3><br><br>
 Page da lista de Pokemon não aparece a imagem, os botões do card, e adiciona vários pokemons dentro do mesmo card <br><br>
 
 
