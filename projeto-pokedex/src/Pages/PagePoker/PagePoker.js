@@ -7,6 +7,7 @@ import imgLogo from '../../img/Logo_POKEDEX.png'
 
 const PagePoke = (props) => {
   const { PokemonCard, setPokemonCard } = props
+  console.log(PokemonCard)
   return (
     <div>
       <BodyHome>
