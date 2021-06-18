@@ -1,6 +1,6 @@
 # Pokédex
 
-Nome dos integrantes: 
+Nome dos integrantes:<br>
 <br>
 Pessoa 1 <br>
 Pessoa 2 <br>
