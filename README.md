@@ -3,8 +3,14 @@
 Nome dos integrantes:<br>
 <br>
 Carlos Henrique Rodrigues <br>
+![Carlos](https://user-images.githubusercontent.com/81387401/122611069-0f28db00-d057-11eb-9296-f6cd8e12434d.PNG)
+
 Fabricia da Silva Sant Anna <br>
+![Fabricia](https://user-images.githubusercontent.com/81387401/122611090-1819ac80-d057-11eb-89a4-926e1d9f223a.PNG)
+
 Laura Campos Nunes <br><br>
+![Laura](https://user-images.githubusercontent.com/81387401/122611100-1bad3380-d057-11eb-93b7-053d07faa366.PNG)
+
 
 Link do Surge:uncovered-sock.surge.sh
 
