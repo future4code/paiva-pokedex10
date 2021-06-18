@@ -26,7 +26,7 @@ const PokeCard = (props) => {
         <div>
             <Card>
                 <div>
-                    <p>{props.PokeInfo.name} </p>
+                    <p>{props.PokeInfo.name}</p>
                     {pokemon.sprites && pokemon.sprites.front_default ? (
                         <img src={pokemon.sprites.front_default} alt={pokemon.name} />) : (
                         <p>Loading...</p>

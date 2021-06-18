@@ -7,13 +7,12 @@ import useRequestData from '../../Hooks/Cards';
 import imgLogo from "../../img/Logo_POKEDEX.png";
 
 
-const Home = () => {
+const Home = (props) => {
     const poke = useRequestData([], 'https://pokeapi.co/api/v2/pokemon')
-    const [PokemonCard, setPokemonCard] = useState([])
+    const {PokemonCard, setPokemonCard} = props
     
     const addPokemon = (PokemonToAdd) => {
 
-        console.log("poke to add:", PokemonToAdd.name)
         const index = PokemonCard.findIndex((PokemonInAdd) => {
             if (PokemonInAdd.name === PokemonToAdd.name) {
                 return true
@@ -22,7 +21,6 @@ const Home = () => {
             }
         })
         
-        console.log("index:", index)
         if (index === -1) {
             const pokeInPokedex = {... PokemonToAdd, taken: true}
             const pokemonCopy = [...PokemonCard, pokeInPokedex]
@@ -32,7 +30,7 @@ const Home = () => {
         }
 
     }
-        
+    console.log(PokemonCard)  
     const ListPokedex = poke.map((poke) => {
         return <PokeCard
             PokeInfo={poke}
