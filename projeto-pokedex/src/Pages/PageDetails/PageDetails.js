@@ -1,9 +1,11 @@
-import React, {useState, useEffect} from 'react'
-import { goBack } from '../../Route/coordinator';
+import React, { useState, useEffect } from 'react'
+import { goBack, goToPoke } from '../../Route/coordinator';
 import { useHistory } from 'react-router';
 import { Header, ContainerGrid, ImgFront, ImgBack, Stats, Type, Moves } from './styled';
 import axios from 'axios';
 import { useParams } from 'react-router';
+import { ButtonContainerHome, Logo, BodyHome } from '../Home/styled'
+import imgLogo from '../../img/Logo_POKEDEX.png'
 
 const PageDetails = () => {
   const pokeURL = "https://pokeapi.co/api/v2/pokemon"
@@ -11,10 +13,10 @@ const PageDetails = () => {
 
   const params = useParams()
   const [pokemon, setPokemon] = useState({})
-  
+
   useEffect(() => {
     const getPokemon = () => {
-      
+
       axios.get(`${pokeURL}/${params.name}`)
         .then((res) => {
           setPokemon(res.data)
@@ -26,58 +28,63 @@ const PageDetails = () => {
     getPokemon();
   }, [setPokemon, pokeURL, params.name]);
 
- 
+
   return (
     <div>
+     
       <Header>
-        <button onClick={() => goBack(history)}>Voltar</button>
-        <h1>PageDetails</h1> 
-        {/* Fazer botão Add e remover como componente ? */}
-        <button>Adicionar ou remover da pokedex</button>
+        <Logo>
+          <img src={imgLogo} alt={"Pokedex"} />
+        </Logo>
+        <ButtonContainerHome>
+          <button onClick={() => goBack(history)}>Voltar</button>
+          {/* Fazer botão Add e remover como componente ? */}
+          <button onClick={() => goToPoke(history)}>Ir Pokédex</button>
+        </ButtonContainerHome>
+        
       </Header>
+      <BodyHome>
 
       <ContainerGrid>
         <ImgFront>
-          Imagem frontal
           {pokemon.sprites && pokemon.sprites.front_default ? (
-            <img src={pokemon.sprites.front_default} alt={pokemon.name} />  ) : (
+            <img src={pokemon.sprites.front_default} alt={pokemon.name} />) : (
             <p>Loading...</p>
           )}
         </ImgFront>
 
         <ImgBack>
-          Imagem de costas
-          {pokemon.sprites && pokemon.sprites.back_default ? (
-            <img src={pokemon.sprites.back_default} alt={pokemon.name} />  ) : (
+           {pokemon.sprites && pokemon.sprites.back_default ? (
+            <img src={pokemon.sprites.back_default} alt={pokemon.name} />) : (
             <p>Loading...</p>
           )}
         </ImgBack>
 
         <Stats>
-          Stats
+          <h2>Poderes</h2>
           {pokemon.stats ? (pokemon.stats.map((stat) => {
             return (
               <p>
                 <strong>{stat.stat.name}:</strong>
                 {stat.base_stat}
               </p>
-          )
+            )
           })) : (<p>Loading...</p>)}
         </Stats>
 
         <Type>
-          Type
+          <h2>Tipo</h2>
           {pokemon.types ? (pokemon.types.map((type) => {
             return (
               <p>
                 <strong>{type.type.name}</strong>
               </p>
-          )
+            )
           })) : (<p>Loading...</p>)}
         </Type>
 
         <Moves>
-          Moves
+          <h2>Principais ataques</h2>
           {pokemon.moves ? (pokemon.moves.filter((item, index) => {
             return index < 5
           }).map((move) => {
@@ -90,6 +97,7 @@ const PageDetails = () => {
         </Moves>
 
       </ContainerGrid>
+      </BodyHome>
     </div>
   );
 }

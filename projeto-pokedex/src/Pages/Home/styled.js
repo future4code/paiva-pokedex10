@@ -1,24 +1,26 @@
 import styled from "styled-components";
 
 
-export const Header = styled.div`
+export const Header = styled.div` 
   display: flex;
   background-color:#fe0000;
   align-items: center;
   justify-content:center; 
   width: auto;  
+     
 `
 
 export const Logo = styled.div` 
  display: flex;   
-  width: 300px;
-  height: 30vh;   
-  margin-right:55em;
-  
+  width: 280px;
+  height: 22vh;   
+  margin-right:55em;  
   `
 
 export const BodyHome = styled.div`
 background-color: #B7D5E5; 
+width: 100%;
+height: 90em;
 `
 
 export const MainContainer = styled.div`
@@ -27,10 +29,23 @@ export const MainContainer = styled.div`
   
  `
 
-export const ButtonContainer = styled.div`  
+export const ButtonContainerHome = styled.div`  
   display: flex;
-  justify-content: flex-start;
-  
+  button {
+    border-radius: 20px;
+    background-color: black ;
+    color: white;
+    border:none;
+    height:40px;
+    width: 180px;  
+    font-size: 18px;
+    font-weight: bold;
+    
+    :hover{
+      background-color: #B7D5E5;
+      color: black;
+    }    
+}   
   `
 
 export const TextHome = styled.h1`  
