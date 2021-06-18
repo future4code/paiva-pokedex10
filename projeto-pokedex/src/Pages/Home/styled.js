@@ -27,10 +27,23 @@ export const MainContainer = styled.div`
   
  `
 
-export const ButtonContainer = styled.div`  
+export const ButtonContainerHome = styled.div`  
   display: flex;
-  justify-content: flex-start;
-  
+  button {
+    border-radius: 20px;
+    background-color: black ;
+    color: white;
+    border:none;
+    height:40px;
+    width: 150px;  
+    font-size: 18px;
+    font-weight: bold;
+    
+    :hover{
+      background-color: #B7D5E5;
+      color: black;
+    }    
+}   
   `
 
 export const TextHome = styled.h1`  

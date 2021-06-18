@@ -6,6 +6,7 @@ const PagePoke = () => {
   return (
     <div>
       <Header>
+        
         <ButtonHome/>
         <h1>Pokédex</h1>
       </Header>
