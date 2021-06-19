@@ -4,26 +4,33 @@ import ButtonDetails from '../ButtonDetails/ButtonDetails';
 import { ButtonContainer, Card } from './styled';
 
 const PokedexCard = (props) => {
+    const pokeURL = "https://pokeapi.co/api/v2/pokemon"
+
     const {PokemonCard, setPokemonCard} = props
-    const pokedexName = PokemonCard.map((poke) => {
-        return <p>{poke.name}</p>
+    const [pokeRequest, setPoke] = useState({})
+
+    const pokedex = PokemonCard.map((poke) => {
+ 
+        return (
+        <Card key={poke.name}>
+            <div>
+                <p>{poke.name}</p>
+                    {/* {pokeRequest.sprites && pokeRequest.sprites.front_default ? (
+                        <img src={pokeRequest.sprites.front_default} alt={pokeRequest.name} />) : (
+                        <p>Loading...</p>
+                    )} */}
+            </div>
+
+            <ButtonContainer>              
+                <button>Remover</button>
+                <ButtonDetails>Detalhes</ButtonDetails>
+            </ButtonContainer>
+        </Card>
+        )
     })
     return (
         <div>
-            <Card>
-                <div>
-                    <p>{pokedexName}</p>
-                        {/* {pokemon.sprites && pokemon.sprites.front_default ? (
-                        <img src={pokemon.sprites.front_default} alt={pokemon.name} />) : (
-                        <p>Loading...</p>
-                    )} */}
-                </div>
-
-                <ButtonContainer>              
-                    {/* <button onClick={() => props.addPokemon(props.PokeInfo)}>Remover</button> */}
-                    {/* <ButtonDetails value={props.PokeInfo.name}>Detalhes</ButtonDetails> */}
-                </ButtonContainer>
-            </Card>
+            {pokedex}
         </div>
 
     )

@@ -1,16 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ButtonPokedex from '../../components/ButtonPokedex/ButtonPokedex';
 import PokeCard from '../../components/PokeCard/PokeCard';
 import { Header, TextHome } from './styled';
 import { MainContainer, BodyHome, Logo, ButtonContainerHome } from '../Home/styled'
-import useRequestData from '../../Hooks/Cards';
+import useRequestData from '../../Hooks/useRequestData';
 import imgLogo from "../../img/Logo_POKEDEX.png";
 
 
 const Home = (props) => {
     const poke = useRequestData([], 'https://pokeapi.co/api/v2/pokemon')
     const {PokemonCard, setPokemonCard} = props
-    
+    const [pokemonOutFavorite, setPokemonOutFavorite] = useState([])
+
+    useEffect(() => {
+        setPokemonOutFavorite(poke)
+      }, [poke])
+
     const addPokemon = (PokemonToAdd) => {
 
         const index = PokemonCard.findIndex((PokemonInAdd) => {
@@ -22,19 +27,23 @@ const Home = (props) => {
         })
         
         if (index === -1) {
-            const pokeInPokedex = {...PokemonToAdd, taken: true}
-            const pokemonCopy = [...PokemonCard, pokeInPokedex]
+            const pokemonCopy = [...PokemonCard, PokemonToAdd]
+            const filterPoke = pokemonOutFavorite.filter((pokeToPokedex) => {
+                if (pokeToPokedex === PokemonToAdd) {
+                    return false
+                }
+                return true
+            })
             setPokemonCard(pokemonCopy)
-        } else {
-            console.log('ENTRAR NO CARRINHO')
-        }
-
+            setPokemonOutFavorite(filterPoke)
+        } 
     }
-    console.log(PokemonCard)  
-    const ListPokedex = poke.map((poke) => {
+    const ListPokedex = pokemonOutFavorite.map((poke) => {
         return <PokeCard
             PokeInfo={poke}
-            addPokemon={addPokemon} />
+            addPokemon={addPokemon}
+            pokemonOutFavorite={pokemonOutFavorite} 
+            />
     })
 
     return (
