@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 
 export const Header = styled.div` 
+ 
   display: flex;
   background-color:#fe0000;
   align-items: center;
   justify-content:center; 
-  width: auto;  
      
 `
 
@@ -19,19 +19,19 @@ export const Logo = styled.div`
 
 export const BodyHome = styled.div`
 background-color: #B7D5E5; 
-width: 100%;
+width: 119em;
 height: 90em;
 `
 
 export const MainContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  
+  justify-content: space-around;
+  grid-template-columns: repeat(5, 1fr);    
  `
 
 export const ButtonContainerHome = styled.div`  
-  display: flex;
-  button {
+    display: flex;       
+    button {      
     border-radius: 20px;
     background-color: black ;
     color: white;
