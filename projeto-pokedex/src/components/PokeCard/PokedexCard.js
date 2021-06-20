@@ -8,7 +8,7 @@ const PokedexCard = ({pokemon}) => {
     const {pokemons, setPokemons, pokedex, setPokedex} = useContext(GlobalStateContext)
 
     const removeFromPokedex = (pokeToRemove) => {
-        const index = pokemons.findIndex((pokeRemoving) => {
+        const index = pokedex.findIndex((pokeRemoving) => {
             if (pokeRemoving === pokeToRemove) {
                 return true
             } else {
