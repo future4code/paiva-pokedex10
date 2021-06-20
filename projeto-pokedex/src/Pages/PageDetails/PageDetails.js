@@ -26,7 +26,7 @@ const PageDetails = () => {
         });
     };
     getPokemon();
-  }, [setPokemon, BASE_URL, params.name]);
+  }, [setPokemon, params.name]);
 
 
   return (
@@ -44,7 +44,7 @@ const PageDetails = () => {
       </Header>
       <BodyHome>
 
-      <ContainerGrid>
+      <ContainerGrid key={pokemon.name}>
         <ImgFront>
           {pokemon.sprites && pokemon.sprites.front_default ? (
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />) : (

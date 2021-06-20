@@ -24,7 +24,7 @@ const PagePoke = () => {
         
       </Header>
         {pokedex.map((poke) => {
-          return <PokedexCard 
+          return <PokedexCard key={poke.name}
             pokemon={poke}
           />
         })}

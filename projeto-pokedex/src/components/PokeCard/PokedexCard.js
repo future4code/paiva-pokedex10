@@ -1,5 +1,4 @@
-import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import GlobalStateContext from '../../global/GlobalStateContext';
 import ButtonDetails from '../ButtonDetails/ButtonDetails';
 import { ButtonContainer, Card } from './styled';
@@ -9,18 +8,28 @@ const PokedexCard = ({pokemon}) => {
     const {pokemons, setPokemons, pokedex, setPokedex} = useContext(GlobalStateContext)
 
     const removeFromPokedex = (pokeToRemove) => {
-        const index = pokemons.findIndex((PokemonInAdd) => {
-            if (PokemonInAdd === pokeToRemove) {
-                const pokemonCopy = [...pokedex, pokeToRemove]
-                setPokedex(pokemonCopy)
+        const index = pokemons.findIndex((pokeRemoving) => {
+            if (pokeRemoving === pokeToRemove) {
                 return true
             } else {
                 return false
             }
         })
-        const filterPoke = [... pokemons]
-        filterPoke.splice(index, 1)
-        setPokemons(filterPoke)
+
+        const newPokedex = [...pokedex]
+        newPokedex.splice(index, 1)
+        
+        const orderedPokedex = newPokedex.sort((a, b) => {
+            return a.id - b.id
+        })
+        
+        const pokemonList = [...pokemons, pokeToRemove]
+        const orderedList = pokemonList.sort((a, b) => {
+            return a.id - b.id
+        })
+
+        setPokedex(orderedPokedex)
+        setPokemons(orderedList)
         
     }
 
@@ -36,7 +45,7 @@ const PokedexCard = ({pokemon}) => {
             </div>
 
             <ButtonContainer>              
-                <button onClick={() => removeFromPokedex()}>Remover</button>
+                <button onClick={() => removeFromPokedex(pokemon)}>Remover</button>
                 <ButtonDetails value={pokemon.name}>Detalhes</ButtonDetails>
             </ButtonContainer>
         </Card>

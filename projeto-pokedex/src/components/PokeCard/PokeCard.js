@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import GlobalStateContext from '../../global/GlobalStateContext';
 import ButtonDetails from '../ButtonDetails/ButtonDetails';
 import { ButtonContainer, Card } from './styled';
@@ -9,16 +9,24 @@ const PokeCard = ({pokemon}) => {
     const addPokemon = (PokemonToAdd) => {
         const index = pokemons.findIndex((PokemonInAdd) => {
             if (PokemonInAdd === PokemonToAdd) {
-                const pokemonCopy = [...pokedex, PokemonToAdd]
-                setPokedex(pokemonCopy)
+                const pokeToPokedex = [...pokedex, PokemonToAdd]
+                const orderedPokedex = pokeToPokedex.sort((a, b) => {
+                    return a.id - b.id
+                })
+                setPokedex(orderedPokedex)
                 return true
             } else {
                 return false
             }
         })
-        const filterPoke = [... pokemons]
-        filterPoke.splice(index, 1)
-        setPokemons(filterPoke)
+
+        const pokemonList = [...pokemons]
+        const orderedList = pokemonList.sort((a, b) => {
+            return a.id - b.id
+        })
+
+        pokemonList.splice(index, 1)
+        setPokemons(orderedList)
     }
                     
     
