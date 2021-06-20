@@ -6,9 +6,9 @@ import axios from 'axios';
 import { useParams } from 'react-router';
 import { ButtonContainerHome, Logo, BodyHome } from '../Home/styled'
 import imgLogo from '../../img/Logo_POKEDEX.png'
+import { BASE_URL } from '../../constants/url';
 
 const PageDetails = () => {
-  const pokeURL = "https://pokeapi.co/api/v2/pokemon"
   const history = useHistory()
 
   const params = useParams()
@@ -17,7 +17,7 @@ const PageDetails = () => {
   useEffect(() => {
     const getPokemon = () => {
 
-      axios.get(`${pokeURL}/${params.name}`)
+      axios.get(`${BASE_URL}/pokemon/${params.name}`)
         .then((res) => {
           setPokemon(res.data)
         })
@@ -26,7 +26,7 @@ const PageDetails = () => {
         });
     };
     getPokemon();
-  }, [setPokemon, pokeURL, params.name]);
+  }, [setPokemon, params.name]);
 
 
   return (
@@ -38,14 +38,13 @@ const PageDetails = () => {
         </Logo>
         <ButtonContainerHome>
           <button onClick={() => goBack(history)}>Voltar</button>
-          {/* Fazer botão Add e remover como componente ? */}
           <button onClick={() => goToPoke(history)}>Ir Pokédex</button>
         </ButtonContainerHome>
         
       </Header>
       <BodyHome>
 
-      <ContainerGrid>
+      <ContainerGrid key={pokemon.name}>
         <ImgFront>
           {pokemon.sprites && pokemon.sprites.front_default ? (
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />) : (

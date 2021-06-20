@@ -52,5 +52,4 @@ export const TextHome = styled.h1`
   display: flex;
   justify-content: center;
   color: black;
-  font-size:20px;
   `

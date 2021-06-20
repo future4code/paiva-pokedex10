@@ -1,41 +1,49 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
+import GlobalStateContext from '../../global/GlobalStateContext';
 import ButtonDetails from '../ButtonDetails/ButtonDetails';
 import { ButtonContainer, Card } from './styled';
 
-const PokeCard = (props) => {
-    const pokeURL = "https://pokeapi.co/api/v2/pokemon"
+const PokeCard = ({pokemon}) => {
+    const {pokemons, setPokemons, pokedex, setPokedex} = useContext(GlobalStateContext)
 
+    const addPokemon = (PokemonToAdd) => {
+        const index = pokemons.findIndex((PokemonInAdd) => {
+            if (PokemonInAdd === PokemonToAdd) {
+                const pokeToPokedex = [...pokedex, PokemonToAdd]
+                const orderedPokedex = pokeToPokedex.sort((a, b) => {
+                    return a.id - b.id
+                })
+                setPokedex(orderedPokedex)
+                return true
+            } else {
+                return false
+            }
+        })
+
+        const pokemonList = [...pokemons]
+        const orderedList = pokemonList.sort((a, b) => {
+            return a.id - b.id
+        })
+
+        pokemonList.splice(index, 1)
+        setPokemons(orderedList)
+    }
+                    
     
-    const [pokemon, setPokemon] = useState([])
-
-    useEffect(() => {
-        const getPokemon = () => {
-
-            axios.get(`${pokeURL}/${props.PokeInfo.name}`)
-                .then((res) =>
-                    setPokemon(res.data))
-                .catch((error) => {
-                    alert("Ocorreu um erro, tente novamente")
-                });
-        };
-        getPokemon();
-    }, [setPokemon, pokeURL]);
-
     return (
         <div>
             <Card>
                 <div>
-                    <p>{props.PokeInfo.name}</p>
+                    <p>{pokemon.name}</p>
                     {pokemon.sprites && pokemon.sprites.front_default ? 
                     (<img src={pokemon.sprites.front_default} alt={pokemon.name} />) : 
                     ( <p>Loading...</p> )}
                 </div>
 
                 <ButtonContainer>                    
-                    <button onClick={() => props.addPokemon(props.PokeInfo)}>Adicionar</button>                      
-                    <ButtonDetails value={props.PokeInfo.name}>Detalhes</ButtonDetails>  
-                    </ButtonContainer>               
+                    <button onClick={() => addPokemon(pokemon)}>Adicionar</button>                      
+                    <ButtonDetails value={pokemon.name}>Detalhes</ButtonDetails>  
+                </ButtonContainer>               
 
                
             </Card>
