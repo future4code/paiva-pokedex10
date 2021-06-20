@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 import { Header, ContainerGrid, ImgFront, ImgBack, Stats, Type, Moves } from './styled';
 import axios from 'axios';
 import { useParams } from 'react-router';
-import { ButtonContainerHome, Logo, BodyHome } from '../Home/styled'
+import { ButtonContainerHome, Logo, BodyHome,TextHome, MainContainer } from '../Home/styled'
 import imgLogo from '../../img/Logo_POKEDEX.png'
 import { BASE_URL } from '../../constants/url';
 
@@ -42,9 +42,14 @@ const PageDetails = () => {
         </ButtonContainerHome>
         
       </Header>
-      <BodyHome>
-
-      <ContainerGrid key={pokemon.name}>
+      <MainContainer>
+        <BodyHome>  
+        <TextHome>
+          Detalhes Pokédex
+        </TextHome>
+        
+              
+        <ContainerGrid key={pokemon.name}>
         <ImgFront>
           {pokemon.sprites && pokemon.sprites.front_default ? (
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />) : (
@@ -96,7 +101,11 @@ const PageDetails = () => {
         </Moves>
 
       </ContainerGrid>
-      </BodyHome>
+      
+       
+        </BodyHome>
+        </MainContainer>
+      
     </div>
   );
 }
