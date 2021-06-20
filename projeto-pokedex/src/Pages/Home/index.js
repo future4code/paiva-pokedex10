@@ -10,14 +10,7 @@ import GlobalStateContext from '../../global/GlobalStateContext';
 
 const Home = () => {
     const {pokemons} = useContext(GlobalStateContext)
-    // const poke = useRequestData([], 'https://pokeapi.co/api/v2/pokemon')
-    // const {PokemonCard, setPokemonCard} = props
-    // const [pokemonOutFavorite, setPokemonOutFavorite] = useState([])
-
-    // useEffect(() => {
-    //     setPokemonOutFavorite(poke)
-    //   }, [poke])
-
+    
     return (
         <div>
             <BodyHome>

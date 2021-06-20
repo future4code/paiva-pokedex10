@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ButtonHome from '../../components/ButtonHome/ButtonHome';
 import { Header } from './styled';
 import PokedexCard from '../../components/PokeCard/PokedexCard';
 import { Logo, BodyHome, ButtonContainerHome } from '../Home/styled';
 import imgLogo from '../../img/Logo_POKEDEX.png'
+import GlobalStateContext from '../../global/GlobalStateContext';
 
-const PagePoke = (props) => {
-  const { PokemonCard, setPokemonCard } = props
-  console.log(PokemonCard)
+const PagePoke = () => {
+
+  const {pokedex} = useContext(GlobalStateContext)
+  
   return (
     <div>
       <BodyHome>
@@ -15,12 +17,18 @@ const PagePoke = (props) => {
         <Logo>
           <img src={imgLogo} alt={"Pokedex"} />
         </Logo>
+
         <ButtonContainerHome>
-        <ButtonHome />
+          <ButtonHome />
         </ButtonContainerHome>
         
       </Header>
-      <PokedexCard PokemonCard={PokemonCard} setPokemonCard={setPokemonCard} />
+        {pokedex.map((poke) => {
+          return <PokedexCard 
+            pokemon={poke}
+          />
+        })}
+        
       </BodyHome>
       
     </div>
