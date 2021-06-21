@@ -31,6 +31,10 @@ Funciona tudo.
 
 
 <h2>Imagens do projeto<h2>
+![Home](https://user-images.githubusercontent.com/81387401/122692824-843e1100-d20d-11eb-97d1-734a0005f641.PNG)
+![Lista](https://user-images.githubusercontent.com/81387401/122692831-87d19800-d20d-11eb-9e3e-b62dcb494284.PNG)
+![Detalhes-Pokedex](https://user-images.githubusercontent.com/81387401/122692834-899b5b80-d20d-11eb-80ee-05ccceb7d368.PNG)
+
   
 
 
