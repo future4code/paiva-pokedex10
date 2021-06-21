@@ -18,6 +18,7 @@ export const Logo = styled.div`
   `
 
 export const BodyHome = styled.div`
+
 background-color: #B7D5E5; 
 width: 119em;
 height: 90em;

@@ -29,7 +29,7 @@ button {
     border:none;
     height:30px;
     width: 100px;  
-    font-weight: bold;
+    font-weight: bold;   
     
     :hover{
       background-color: #B7D5E5;
